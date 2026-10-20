@@ -48,7 +48,6 @@ fn main() -> Result<(), ToggleWindowError> {
         output: enabled_output.clone(),
         action: OutputAction::Off,
     })?;
-    println!("Disable {enabled_output}:{response:?}");
     validate_output_change_response(response)?;
     Ok(())
 }
