@@ -31,12 +31,13 @@
               pkg-config
               rust-bin.beta.latest.default
             ];
-
-            shellHook = ''
-              alias ls=eza
-              alias find=fd
-            '';
           };
+        apps.default = (pkgs.makeRustPlatform { inherit (pkgs) rustc cargo; }).buildRustPackage {
+          pname = "cwest-niri";
+          version = "0.1.0";
+          src = ./.;
+          cargoHash = "sha256-G52m3MFDyq6l+eOIjT/O4jaR+hY52azXVlpNhaRK7Yc=";
+        };
       }
     );
 }
