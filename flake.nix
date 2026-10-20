@@ -34,7 +34,7 @@
               rust-bin.beta.latest.default
             ];
           };
-        apps.default = (pkgs.makeRustPlatform { inherit (pkgs) rustc cargo; }).buildRustPackage {
+        apps.cwest-niri = (pkgs.makeRustPlatform { inherit (pkgs) rustc cargo; }).buildRustPackage {
           pname = "cwest-niri";
           version = "0.1.0";
           src = ./.;
